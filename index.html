@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <!-- <h1>Hello Name</h1>
+    <script>
+        const h1 = document.querySelector('h1');
+        console.log(h1.innerHTML);
+    </script> -->
+
+    <!-- <script>
+        const h1 = document.createElement('h1')
+        h1.innerText = 'Hello Name'
+        console.log(h1)
+
+        document.body.appendChild(h1)
+    </script> -->
+    <!-- <div id = "root"></div>
+
+    <script>
+        const root = document.getElementById('root')
+        const h1 = document.createElement('h1')
+        h1.innerText = 'Hello Name';
+        h1.id = 'heading'
+        root.appendChild(h1)
+    </script> -->
+
+    <!-- <h1>Add React to website</h1>
+    <script>
+
+    </script> -->
+
+    
+    <!-- <script>
+        //React -> React DOM
+        //React.createElement(type, props, children, n)
+        const H1DOM = document.createElement('h1')
+        H1DOM.title = 'Hello'
+        H1DOM.className = 'heading'
+        H1DOM.innerText = 'Hello Name'
+        document.body.appendChild(H1DOM)
+
+        //React
+        const h1React = React.createElement('h1',{
+            title: 'Hello',
+            className: 'heading',
+        }, 'Hello guys!')
+
+        console.dir(H1DOM)
+        console.log(h1React)
+    </script> -->
+    <div id="root"></div>
+    <!-- <div id="root2"></div>
+    <script>
+        const ulDOM = document.createElement('ul')
+
+        const liDOM1 = document.createElement('li')
+        liDOM1.innerText = 'Javascript'
+        const liDOM2 = document.createElement('li')
+        liDOM2.innerText = 'ReactJs'
+
+        ulDOM.appendChild(liDOM1)
+        ulDOM.appendChild(liDOM2)
+        const root = document.getElementById('root')
+        // document.body.appendChild(ulDOM)
+        const h1React = React.createElement('h1',{
+            title: 'Hello',
+            className: 'heading',
+        }, 'Hello guys!')
+
+        // ReactDOM.render(h1React,root)
+
+        const ulReact = React.createElement(
+            'ul',
+            null,
+            React.createElement('li',null,'Javascript'),
+            React.createElement('li',null,'ReactJS'),
+        )
+
+        const root2 = document.getElementById('root2')
+        //react@17
+        // ReactDOM.render(ulReact, root2)
+
+        //react@18
+        const r = ReactDOM.createRoot(root2)
+        r.render(ulReact)
+
+
+    </script> -->
+
+    <script type="text/babel">
+        const courses = [
+            {name : 'HTML, CSS'},
+            {name : 'Responsive web design'},
+            {name : 'ReactJS'}
+        ]
+        //C1
+        // const ul = <ul>
+        //     <li>{courses[0].name}</li>
+        //     <li>{courses[1].name}</li>
+        //     <li>{courses[2].name}</li>        
+        // </ul>
+
+        //C2
+        const ul = <ul>
+            {courses.map((course, index) =>
+                <li key={index}>{course.name}</li>
+                )}
+            </ul>    
+        ReactDOM.render(ul, document.getElementById('root'))
+    </script>
+</body>
+</html>
